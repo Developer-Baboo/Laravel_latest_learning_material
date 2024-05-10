@@ -11,4 +11,6 @@ Route::get('/', function () {
 // Route::resource('students', StudentController::class);
 // Route::resource('lecturers', LecturerController::class);
 
-Route::get('/union', [StudentController::class, 'unionData']);
+// Route::get('/union', [StudentController::class, 'unionData']);
+Route::get('/when', [StudentController::class, 'whenData']);
+Route::get('/chunk', [StudentController::class, 'chunkData']);
