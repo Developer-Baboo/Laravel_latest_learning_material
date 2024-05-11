@@ -1,8 +1,9 @@
-I am learning Laravel 11 the latest version from Yahoo Baba Youtube Playlist = > <a href="https://www.youtube.com/@YahooBaba">Yahoo Baba</a>
-Topics: 
-1 ORM
-2 Accessors and Mutators
-3 Slots
-4 Custom Validations
-5 Resource Controller
-6 Raw Sql Queries
+I am learning 💻 Laravel 11 the latest version from Yahoo Baba Youtube Playlist => <a href="https://www.youtube.com/@YahooBaba">Yahoo Baba</a> <br/>
+========== Topics ❤ : ======================
+✔ ORM <br/>
+✔ Accessors and Mutators <br/>
+✔ Slots <br/>
+✔ Custom Validations <br/>
+✔ Resource Controller <br/>
+✔ Raw SQL Queries
+======================================
