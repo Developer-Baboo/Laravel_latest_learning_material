@@ -101,6 +101,49 @@ class StudentController extends Controller
         return $students;
     }
 
+    
+    public function showStudents(){
+        // return "<h1>Hello</h1>";
+        $students = DB::select("select * from students");
+        $students = DB::select("select name, age from students");
+        $students = DB::select("select name, age from students where id = ?", [1]);
+        $students = DB::select("select name, age from students where name = ?", ["Dr. Robert Johnson"]);
+        $students = DB::select("select name, age from students where name like ?", ["D%"]);
+        $students = DB::select("select name, age from students 
+                                where age < ? and name like ?", [50,"D%"]);
+//======================================================================== 
+        // name binding: to prevent from sql injection
+        $students = DB::select("select name, age from students 
+                                where id = :id", ['id' => 3]);
+//======================================================================== 
+
+    // Insert data into tables
+    $students = DB::insert("insert into students(name, age) values(?, ?)", ["baboo kumar", 22]);
+    
+    // Update students records
+    $students = DB::update("update students set name = 'test' where id = ? ",[1]);
+
+    // deleted the record successfully
+    
+    $students = DB::delete("delete from students where id = ?", [3]);
+    
+    // statement dont return any thing, statement wo chez pass krta ha jis ka hum return man kuch nhi chaheya
+    $students = DB::statement("drop table students");
+
+    // unprepared sttement, is man sql ke koe bhi command pass krva sakhta han
+    // note: unprepared is very dnaground don't use it, easly hackable
+    // $students = DB::unprepared("delete from students where id = 5");
+
+    if($students){
+        echo "data inserted/updated/deleted successfully";
+    }    
+        // foreach($students as $student ){
+        //     echo $student->name."<br />";
+        // }
+
+        // return $students;
+    }
+
 
     public function index()
     {
