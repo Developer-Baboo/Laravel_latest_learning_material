@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\LecturerController;
 
@@ -17,4 +18,11 @@ use App\Http\Controllers\LecturerController;
 
 
 
-Route::get('/', [StudentController::class, 'showStudents']);
+// Route::get('/', [StudentController::class, 'showStudents']);
+
+
+Route::get('/', function () {
+    return view('addUser');
+});
+
+Route::post('/add', [UserController::class, 'addUser'])->name('addUser');
