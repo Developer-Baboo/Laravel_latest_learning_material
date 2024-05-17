@@ -42,6 +42,15 @@
                     </span>
                 </div>
                 <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input type="text" value="{{ old('userpass') }}" class="form-control @error('userpass') is-invalid @enderror"  name="userpass" id="">
+                    <span class="text-danger">
+                        @error('userpass')
+                            {{ $message }}
+                        @enderror
+                    </span>
+                </div>
+                <div class="mb-3">
                     <label class="form-label">Age</label>
                     <input type="text" value="{{ old('userage') }}" class="form-control @error('userage') is-invalid @enderror" name="userage" id="">
                     <span class="text-danger">
@@ -63,7 +72,7 @@
                             {{ $message }}
                         @enderror
                     </span>
-                </div>                
+                </div>
                 <div class="mb-3">
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
