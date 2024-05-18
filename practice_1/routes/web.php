@@ -7,6 +7,7 @@ use App\Http\Controllers\customValidation;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\LecturerController;
 use App\Http\Controllers\ResourceController;
+use App\Http\Controllers\UserEloquentController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -41,21 +42,25 @@ use App\Http\Controllers\ResourceController;
 // ==============================================================
 //Laravel Resource controller
 // below will create 7 methods and their routes
-Route::resource('users', ResourceController::class);
+// Route::resource('users', ResourceController::class);
 // ==============================================================
 
 // ==============================================================
 // below will create only specific methods
-Route::resource('users', ResourceController::class)->only([
+/* Route::resource('users', ResourceController::class)->only([
     'create' => 'update', 'show'
-]);
+]); */
 // ==============================================================
 // below will skipps only specific methods
-Route::resource('users', ResourceController::class)->except([
+/* Route::resource('users', ResourceController::class)->except([
     'create' => 'update', 'show'
-]);
+]); */
 // ==============================================================
 
 
-Route::resource('users', UserController::class);
+/* Route::resource('users', UserController::class);
 Route::resource('users.comments', Comments::class);
+ */
+
+
+ Route::resource('users', UserEloquentController::class);
