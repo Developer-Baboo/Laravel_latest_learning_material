@@ -10,4 +10,10 @@ class UserEloquent extends Model
     use HasFactory;
     protected $table = 'users';
     protected $timestamp = false;
+
+    // comment on gruarded or fillable to save data of mass assignment
+    // protected $guarded = [];
+
+    protected $fillable = ['name','email','age','city'];
+
 }
