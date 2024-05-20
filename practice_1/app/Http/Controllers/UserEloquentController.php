@@ -107,17 +107,37 @@ class UserEloquentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(UserEloquent $userEloquent)
+    public function edit(string $id)
     {
-        return view('updateuser');
+        $users = UserEloquent::find($id);
+        return view('updateuser', compact('users'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, UserEloquent $userEloquent)
+    public function update(Request $request, string $id)
     {
-        //
+        // First Method of updating data
+       /*  $user = UserEloquent::find($id);
+        $user->name = $request->username;
+        $user->email = $request->useremail;
+        $user->age = $request->userage;
+        $user->city = $request->usercity; 
+        $user->save();
+        
+        */
+
+
+        // 2nd Method updating
+
+        $user = UserEloquent::where('id', $id)->update([
+            'name' => $request->username,
+            'email' => $request->useremail,
+            'age' => $request->userage,
+            'city' => $request->usercity,
+        ]);
+        return redirect()->route('users.index')->with('status', 'User Updated Successfully.');
     }
 
     /**
