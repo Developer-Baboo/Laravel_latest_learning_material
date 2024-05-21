@@ -64,3 +64,11 @@ Route::resource('users.comments', Comments::class);
 
 
  Route::resource('users', UserEloquentController::class);
+
+
+
+
+
+
+
+
