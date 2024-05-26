@@ -68,7 +68,7 @@ Route::resource('users.comments', Comments::class);
 
 
 
-
+Route::get('/fetchdata', [UserController::class, 'fetchdata'])->name('fetchdata');
 
 
 

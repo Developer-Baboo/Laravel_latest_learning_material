@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\UserRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
 {
@@ -41,4 +42,10 @@ class UserController extends Controller
         return $req->except(['username', 'usercity']);
 
     }
+
+    public function fetchdata(){
+        $users = User::with("phoneNumber")->get();
+        return $users;
+    }
+
 }
